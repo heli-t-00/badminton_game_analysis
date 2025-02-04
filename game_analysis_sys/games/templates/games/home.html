@@ -1,10 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+<!-- games/templates/games/home.html -->
+{% extends 'games/base.html' %}
+
+{% block title %}Home - Game Analysis System{% endblock %}
+
+{% block content %}
+    <h2>Welcome to the Game Analysis System</h2>
+    <p>This is your home page where you can see a list of users:</p>
+
+    <ul>
+        {% for user in users %}
+            <li>{{ user.name }}</li>  <!-- Assuming the user model has a 'name' field -->
+        {% empty %}
+            <li>No users found.</li>
+        {% endfor %}
+    </ul>
+{% endblock %}

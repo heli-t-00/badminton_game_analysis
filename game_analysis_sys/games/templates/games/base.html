@@ -1,10 +1,32 @@
+<!-- games/templates/games/base.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}My Game Analysis System{% endblock %}</title>
 </head>
 <body>
-$END$
+    <!-- Header Section -->
+    <header>
+        <h1>Game Analysis System</h1>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/games/">Games</a></li>
+                <li><a href="/points/">Points</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Content Section -->
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2025 Game Analysis System</p>
+    </footer>
 </body>
 </html>
